@@ -14,6 +14,6 @@ public class ArrayHelperTest {
     public void printArray() {
         int[] arr = {1,2,3,4,5};
         ArrayHelper.printArray(arr);
-        assertEquals("1\n2\n3\n4\n5\n", systemOutRule.getLogWithNormalizedLineSeparator());
+        assertEquals("{1, 2, 3, 4, 5}\n", systemOutRule.getLogWithNormalizedLineSeparator());
     }
 }
