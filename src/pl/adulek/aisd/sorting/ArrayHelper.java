@@ -8,4 +8,13 @@ public class ArrayHelper {
         }
         System.out.println(arr[arr.length-1] + "}");
     }
+
+    public static void swap(int[] arr, int i, int j) {
+        if (i==j)
+            return;
+
+        int tmp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = tmp;
+    }
 }
