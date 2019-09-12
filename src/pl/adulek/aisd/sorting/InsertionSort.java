@@ -13,6 +13,7 @@ public class InsertionSort {
             }
 
             arr[i] = newElement;
+            ArrayHelper.printArray(arr);
         }
 
     }
