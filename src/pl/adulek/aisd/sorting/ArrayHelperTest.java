@@ -34,4 +34,12 @@ public class ArrayHelperTest {
         ArrayHelper.swap(arr, 0,0);
         assertArrayEquals(expectedArrNotChanged , arr);
     }
+
+    @Test
+    public void printStringArray() {
+        String[] arr = {"bcdef", "dbaqc", "abcde", "omadd", "bbbbb"};
+        ArrayHelper.printArray(arr);
+        assertEquals("{bcdef, dbaqc, abcde, omadd, bbbbb}\n",
+                systemOutRule.getLogWithNormalizedLineSeparator());
+    }
 }

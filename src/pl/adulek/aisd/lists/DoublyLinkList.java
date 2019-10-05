@@ -22,14 +22,39 @@ public class DoublyLinkList<T> {
         list.addAtEnd(20);
         list.addAtEnd(30);
         list.addAtEnd(40);
+        list.addBefore(40, 35);
+        System.out.println(list.addBefore(10, 5));
+        System.out.println(list.addBefore(6, 3));
         System.out.println(list);
-        System.out.println("Deleting: "+ list.deleteAtEnd());
-        list.deleteAtEnd();
-        list.deleteAtEnd();
-        list.deleteAtEnd();
-        list.deleteAtEnd();
-        System.out.println(list);
+//        System.out.println("Deleting: "+ list.deleteAtEnd());
+//        list.deleteAtEnd();
+//        list.deleteAtEnd();
+//        list.deleteAtEnd();
+//        list.deleteAtEnd();
+//        System.out.println(list);
 
+    }
+
+    public boolean addBefore(T before, T insertion) {
+        Node<T> node = head;
+        while (node!= null) {
+            if(node.getValue().equals(before)) {
+                Node<T> insertionNode = new Node<T>(insertion);
+                Node<T> prev = node.getPrev();
+                if(prev!=null) {
+                    prev.setNext(insertionNode);
+                    insertionNode.setPrev(prev);
+                } else {
+                    head = insertionNode;
+                }
+                node.setPrev(insertionNode);
+                insertionNode.setNext(node);
+                size++;
+                return true;
+            }
+            node = node.getNext();
+        }
+        return false;
     }
 
     public void addAtFront(T t) {
